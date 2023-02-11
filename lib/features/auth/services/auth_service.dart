@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:convert';
 import 'package:amazon_clone/constants/error_handling.dart';
 import 'package:amazon_clone/constants/utils.dart';
@@ -8,6 +10,7 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../constants/global_variable.dart';
 import '../../../providers/user_provider.dart';
+import '../../home/screens/home_screen.dart';
 
 class AuthService {
   //sign up user
@@ -26,7 +29,7 @@ class AuthService {
         address: '',
         type: '',
         token: '',
-        cart: [],
+        // cart: [],
       );
 
       http.Response res = await http.post(
@@ -69,15 +72,18 @@ class AuthService {
         },
       );
       print(res.body);
-      // ignore: use_build_context_synchronously
       httpErrorHandle(
         response: res,
         context: context,
         onSuccess: () async {
           SharedPreferences prefs = await SharedPreferences.getInstance();
-          // ignore: use_build_context_synchronously
           Provider.of<UserProvider>(context, listen: false).setUser(res.body);
           await prefs.setString('x-auth-token', jsonDecode(res.body)['token']);
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            HomeScreen.routeName,
+            (route) => false,
+          );
         },
       );
     } catch (e) {
