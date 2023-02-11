@@ -2,6 +2,8 @@
 
 It is a full-stack amazon clone featuring an admin panel using Flutter framework and Node.js. It has features to register, log in with your account, shop, payment with google pay and apple pay, and see the list and status of purchased products, also as a seller, you can add or remove products, view the statistics of the sells.
 
+A full-stack amazon clone featuring an admin panel using Flutter framework, Node.js and MongoDB.
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
