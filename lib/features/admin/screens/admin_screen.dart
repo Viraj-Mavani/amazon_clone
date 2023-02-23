@@ -1,4 +1,5 @@
 import 'package:amazon_clone/constants/global_variable.dart';
+import 'package:amazon_clone/features/admin/screens/post_screen.dart';
 // import 'package:amazon_clone/features/admin/screens/analtyics_screen.dart';
 // import 'package:amazon_clone/features/admin/screens/orders_screen.dart';
 // import 'package:amazon_clone/features/admin/screens/posts_screen.dart';
@@ -16,11 +17,17 @@ class _AdminScreenState extends State<AdminScreen> {
   double bottomBarWidth = 42;
   double bottomBarBorderWidth = 5;
 
-  // List<Widget> pages = [
-  //   const PostsScreen(),
-  //   const AnalyticsScreen(),
-  //   const OrdersScreen(),
-  // ];
+  List<Widget> pages = [
+    const PostsScreen(),
+    const Center(
+      child: Text('Analytics Screen'),
+    ),
+    const Center(
+      child: Text('Orders Screen'),
+    ),
+    // const AnalyticsScreen(),
+    // const OrdersScreen(),
+  ];
 
   void updatePage(int page) {
     setState(() {
@@ -62,7 +69,7 @@ class _AdminScreenState extends State<AdminScreen> {
           ),
         ),
       ),
-      // body: pages[_page],
+      body: pages[_page],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _page,
         selectedItemColor: GlobalVariables.selectedNavBarColor,
