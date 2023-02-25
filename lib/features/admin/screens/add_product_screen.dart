@@ -4,6 +4,7 @@ import 'package:amazon_clone/common/widgets/custom_button.dart';
 import 'package:amazon_clone/common/widgets/custom_textfield.dart';
 import 'package:amazon_clone/constants/global_variable.dart';
 import 'package:amazon_clone/constants/utils.dart';
+import 'package:amazon_clone/features/admin/services/admin_services.dart';
 // import 'package:amazon_clone/features/admin/services/admin_services.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dotted_border/dotted_border.dart';
@@ -23,7 +24,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
   final TextEditingController descriptionController = TextEditingController();
   final TextEditingController priceController = TextEditingController();
   final TextEditingController quantityController = TextEditingController();
-  // final AdminServices adminServices = AdminServices();
+  final AdminServices adminServices = AdminServices();
 
   String category = 'Mobiles';
   List<File> images = [];
@@ -46,19 +47,19 @@ class _AddProductScreenState extends State<AddProductScreen> {
     'Fashion'
   ];
 
-  // void sellProduct() {
-  //   if (_addProductFormKey.currentState!.validate() && images.isNotEmpty) {
-  //     adminServices.sellProduct(
-  //       context: context,
-  //       name: productNameController.text,
-  //       description: descriptionController.text,
-  //       price: double.parse(priceController.text),
-  //       quantity: double.parse(quantityController.text),
-  //       category: category,
-  //       images: images,
-  //     );
-  //   }
-  // }
+  void sellProduct() {
+    if (_addProductFormKey.currentState!.validate() && images.isNotEmpty) {
+      adminServices.sellProduct(
+        context: context,
+        name: productNameController.text,
+        description: descriptionController.text,
+        price: double.parse(priceController.text),
+        quantity: double.parse(quantityController.text),
+        category: category,
+        images: images,
+      );
+    }
+  }
 
   void selectImages() async {
     var res = await pickImages();
@@ -188,8 +189,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
                 const SizedBox(height: 10),
                 CustomButton(
                   text: 'Sell',
-                  onTap: () {},
-                  // onTap: sellProduct,
+                  onTap: sellProduct,
                 ),
               ],
             ),
