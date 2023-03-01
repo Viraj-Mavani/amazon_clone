@@ -2,9 +2,8 @@ import 'package:amazon_clone/common/widgets/loader.dart';
 import 'package:amazon_clone/constants/global_variable.dart';
 import 'package:amazon_clone/features/home/widgets/address_box.dart';
 import 'package:amazon_clone/features/search/services/search_services.dart';
-// import 'package:amazon_clone/features/product_details/screens/product_details_screen.dart';
-// import 'package:amazon_clone/features/search/services/search_services.dart';
-// import 'package:amazon_clone/features/search/widget/searched_product.dart';
+import 'package:amazon_clone/features/search/widgets/searched_product.dart';
+import 'package:amazon_clone/features/product_details/screens/product_details_screen.dart';
 import 'package:amazon_clone/models/product.dart';
 import 'package:flutter/material.dart';
 
@@ -115,34 +114,33 @@ class _SearchScreenState extends State<SearchScreen> {
           ),
         ),
       ),
-      // products == null
-      //     ? const Loader()
-      //     :
-      body: Column(
-        children: [
-          const AddressBox(),
-          const SizedBox(height: 10),
-          Expanded(
-            child: ListView.builder(
-              // itemCount: products!.length,
-              itemBuilder: (context, index) {
-                return GestureDetector(
-                  onTap: () {
-                    // Navigator.pushNamed(
-                    // context,
-                    // ProductDetailScreen.routeName,
-                    // arguments: products![index],
-                    // );
-                  },
-                  // child: SearchedProduct(
-                  //   product: products![index],
-                  // ),
-                );
-              },
+      body: products == null
+          ? const Loader()
+          : Column(
+              children: [
+                const AddressBox(),
+                const SizedBox(height: 10),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: products!.length,
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            ProductDetailScreen.routeName,
+                            arguments: products![index],
+                          );
+                        },
+                        child: SearchedProduct(
+                          product: products![index],
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
             ),
-          ),
-        ],
-      ),
     );
   }
 }
