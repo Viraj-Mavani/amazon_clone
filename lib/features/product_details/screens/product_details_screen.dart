@@ -144,8 +144,11 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   Text(
                     widget.product.id!,
                   ),
-                  Stars(
-                    rating: avgRating,
+                  // Stars(
+                  //   rating: avgRating,
+                  // ),
+                  const Stars(
+                    rating: 4,
                   ),
                 ],
               ),
@@ -227,7 +230,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               child: CustomButton(
                 text: 'Add to Cart',
                 onTap: addToCart,
-                // color: const Color.fromRGBO(254, 216, 19, 1),
+                color: Color.fromARGB(255, 255, 213, 1),
               ),
             ),
             const SizedBox(height: 10),
