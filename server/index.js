@@ -1,11 +1,11 @@
-//IMPORTS from pcks
+// IMPORTS FROM PACKAGES
 const express = require("express");
 const mongoose = require("mongoose");
 const adminRouter = require("./routes/admin");
-
-//IMPORTS from other files
+// IMPORTS FROM OTHER FILES
 const authRouter = require("./routes/auth");
 const productRouter = require("./routes/product");
+const userRouter = require("./routes/user");
 
 //INIT
 const PORT = 3000;
@@ -18,6 +18,7 @@ app.use(express.json());
 app.use(authRouter);
 app.use(adminRouter);
 app.use(productRouter);
+app.use(userRouter);
 
 //Connection
 mongoose.set("strictQuery", true); //changed

@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { productSchema } = require("./product");
 
 const userSchema = mongoose.Schema({
 	name: {
@@ -22,7 +23,7 @@ const userSchema = mongoose.Schema({
 	password: {
 		required: true,
 		type: String,
-		minlength: 8
+		minlength: 8,
 		// validate: {
 		// 	validator: (value) => {
 		// 		return value.length > 8;        //changed
@@ -38,7 +39,15 @@ const userSchema = mongoose.Schema({
 		type: String,
 		default: "user",
 	},
-	//cart
+	cart: [
+		{
+			product: productSchema,
+			quantity: {
+				type: Number,
+				required: true,
+			},
+		},
+	],
 });
 
 const User = mongoose.model("User", userSchema);
