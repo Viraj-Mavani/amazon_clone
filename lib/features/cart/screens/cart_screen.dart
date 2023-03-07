@@ -115,6 +115,17 @@ class _CartScreenState extends State<CartScreen> {
           children: [
             const AddressBox(),
             const CartSubtotal(),
+            // ignore: avoid_unnecessary_containers
+            Padding(
+              padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+              child: Container(
+                //change
+                alignment: Alignment.centerLeft,
+                child: const Text("EMI Available Details",
+                    textAlign: TextAlign.right),
+              ),
+            ),
+            const SizedBox(height: 15),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: CustomButton(
