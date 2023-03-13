@@ -52,30 +52,33 @@ class _DealOfDayState extends State<DealOfDay> {
                         style: TextStyle(fontSize: 20),
                       ),
                     ),
+                    const SizedBox(
+                      height: 15,
+                    ),
                     Image.network(
                       product!.images[0],
                       height: 235,
                       fit: BoxFit.fitHeight,
                     ),
                     Container(
-                      padding: const EdgeInsets.only(left: 15),
+                      padding: const EdgeInsets.only(left: 20),
                       alignment: Alignment.topLeft,
                       child: const Text(
-                        '\$100',
+                        'Upto 50% Discount',
                         // '\$${product.price[0]}', //Change
                         style: TextStyle(fontSize: 18),
                       ),
                     ),
-                    Container(
-                      alignment: Alignment.topLeft,
-                      padding:
-                          const EdgeInsets.only(left: 15, top: 5, right: 40),
-                      child: const Text(
-                        'Viraj',
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
+                    // Container(
+                    //   alignment: Alignment.topLeft,
+                    //   padding:
+                    //       const EdgeInsets.only(left: 15, top: 5, right: 40),
+                    //   child: const Text(
+                    //     'Viraj',
+                    //     maxLines: 2,
+                    //     overflow: TextOverflow.ellipsis,
+                    //   ),
+                    // ),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(

@@ -29,11 +29,11 @@ class _OrdersScreenState extends State<OrdersScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (orders == null || orders!.isEmpty) {
-      return const Center(
-        child: Text('No orders found'),
-      );
-    }
+    // if (orders == null || orders!.isEmpty) {
+    //   return const Center(
+    //     child: Text('No orders found'),
+    //   );
+    // }
     return orders == null
         ? const Loader()
         : GridView.builder(
