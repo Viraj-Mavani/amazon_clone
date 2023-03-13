@@ -1,8 +1,3 @@
-// import 'package:amazon_clone/common/widgets/loader.dart';
-// import 'package:amazon_clone/features/account/widgets/single_product.dart';
-// import 'package:amazon_clone/features/admin/screens/add_product_screen.dart';
-// import 'package:amazon_clone/features/admin/services/admin_services.dart';
-// import 'package:amazon_clone/models/product.dart';
 import 'package:amazon_clone/common/widgets/loader.dart';
 import 'package:amazon_clone/features/account/widgets/single_product.dart';
 import 'package:amazon_clone/features/admin/screens/add_product_screen.dart';
