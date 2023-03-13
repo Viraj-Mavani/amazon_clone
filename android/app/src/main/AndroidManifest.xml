@@ -2,7 +2,7 @@
     package="com.example.amazon_clone">
    <application
         android:label="amazon_clone"
-        android:name="${applicationName}"
+        android:name="Amazon Clone"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
