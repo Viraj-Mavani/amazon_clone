@@ -5,7 +5,7 @@ import 'package:amazon_clone/features/search/screens/search_screen.dart';
 import 'package:amazon_clone/models/order.dart';
 import 'package:amazon_clone/providers/user_provider.dart';
 import 'package:flutter/material.dart';
-// import 'package:intl/intl.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class OrderDetailScreen extends StatefulWidget {
@@ -149,10 +149,10 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Text('Order Date:      ${DateFormat().format(
-                    //   DateTime.fromMillisecondsSinceEpoch(
-                    //       widget.order.orderedAt),
-                    // )}'),
+                    Text('Order Date:      ${DateFormat().format(
+                      DateTime.fromMillisecondsSinceEpoch(
+                          widget.order.orderedAt),
+                    )}'),
                     Text('Order ID:          ${widget.order.id}'),
                     Text('Order Total:      \$${widget.order.totalPrice}'),
                   ],

@@ -205,9 +205,9 @@ class _AddressScreenState extends State<AddressScreen> {
                   child: CircularProgressIndicator(),
                 ),
               ),
-              ElevatedButton(
-                  onPressed: () => payPressed(address),
-                  child: const Text("Pay"))
+              // ElevatedButton(
+              //     onPressed: () => payPressed(address),
+              //     child: const Text("Pay"))
             ],
           ),
         ),
