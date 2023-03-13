@@ -1,3 +1,4 @@
+import 'package:amazon_clone/features/account/services/account_services.dart';
 import 'package:amazon_clone/features/account/widgets/account_button.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +26,7 @@ class TopButtons extends StatelessWidget {
           children: [
             AccountButton(
               text: 'Log Out',
-              onTap: () => {/**AccountServices().logOut(context)**/},
+              onTap: () => AccountServices().logOut(context),
             ),
             AccountButton(
               text: 'Your Wish List',
