@@ -205,17 +205,6 @@ class _AddressScreenState extends State<AddressScreen> {
                   child: CircularProgressIndicator(),
                 ),
               ),
-              ElevatedButton(
-                onPressed: () => payPressed(address),
-                child: Text('Pay with Google'),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
-                  onPrimary: Colors.white,
-                  elevation: 5,
-                  textStyle: TextStyle(fontSize: 20),
-                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                ),
-              ),
               // ElevatedButton(
               //     onPressed: () => payPressed(address),
               //     child: const Text("Pay"))
