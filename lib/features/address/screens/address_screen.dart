@@ -160,21 +160,25 @@ class _AddressScreenState extends State<AddressScreen> {
                     CustomTextField(
                       controller: flatBuildingController,
                       hintText: 'Flat, House no, Building',
+                      isObsecure: false,
                     ),
                     const SizedBox(height: 10),
                     CustomTextField(
                       controller: areaController,
                       hintText: 'Area, Street',
+                      isObsecure: false,
                     ),
                     const SizedBox(height: 10),
                     CustomTextField(
                       controller: pincodeController,
                       hintText: 'Pincode',
+                      isObsecure: false,
                     ),
                     const SizedBox(height: 10),
                     CustomTextField(
                       controller: cityController,
                       hintText: 'Town/City',
+                      isObsecure: false,
                     ),
                     const SizedBox(height: 10),
                   ],

@@ -98,16 +98,19 @@ class _AuthScreenState extends State<AuthScreen> {
                         CustomTextField(
                           controller: _nameController,
                           hintText: 'Name',
+                          isObsecure: false,
                         ),
                         const SizedBox(height: 10),
                         CustomTextField(
                           controller: _emailController,
                           hintText: 'Email',
+                          isObsecure: false,
                         ),
                         const SizedBox(height: 10),
                         CustomTextField(
                           controller: _passwordController,
                           hintText: 'Password',
+                          isObsecure: true,
                         ),
                         const SizedBox(height: 10),
                         CustomButton(
@@ -153,11 +156,13 @@ class _AuthScreenState extends State<AuthScreen> {
                         CustomTextField(
                           controller: _emailController,
                           hintText: 'Email',
+                          isObsecure: false,
                         ),
                         const SizedBox(height: 10),
                         CustomTextField(
                           controller: _passwordController,
                           hintText: 'Password',
+                          isObsecure: true,
                         ),
                         const SizedBox(height: 10),
                         CustomButton(
